@@ -10,20 +10,9 @@ const listImg = galleryItems.map(({preview, original, description}) =>
 </li>`).join('')
 
 collection.insertAdjacentHTML('afterbegin', listImg)
-function onOpenLargeImage (event) {
-    event.preventDefault();
-    if (event.target.classList.contains("gallery__item")) {
-        return
-    }
 
 
-}
 
-const lightBox = new SimpleLightbox(collection, {
-    captionsData: `alt`,
-    captionsDelay: 250,
-})
-collection.spinner
-collection.addEventListener('click', onOpenLargeImage)
+const light = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: 250,});
 
 console.log(galleryItems);
